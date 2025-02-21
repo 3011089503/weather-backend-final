@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "weather_user",
+    "password": "weather_password",
+    "database": "weather_db",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "weather_user",
+    "password": "weather_password",
+    "database": "weather_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "weather_user",
+    "password": "weather_password",
+    "database": "weather_db",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}
