@@ -4,7 +4,7 @@ import { WeatherService } from '../services/WeatherService';
 // Cities to track
 const cities = ['New York', 'London', 'Tokyo', 'Sydney', 'Berlin'];
 
-// 每 30 分钟拉取一次天气数据并存储
+// get weather data at 30min
 cron.schedule('*/30 * * * *', async () => {
   console.log('Fetching weather data...');
   for (const city of cities) {

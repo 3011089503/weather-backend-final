@@ -5,5 +5,5 @@ dotenv.config();
 
 export const sequelize = new Sequelize(process.env.DATABASE_URL!, {
   dialect: 'mysql',
-  logging: console.log, // 方便调试 SQL 语句
+  logging: console.log, // sql language help
 });
