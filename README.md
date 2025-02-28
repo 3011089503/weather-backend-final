@@ -2,4 +2,4 @@ This project follows a modular structure to ensure scalability and maintainabili
 
 This project uses MySQL as the database to store weather data retrieved from the OpenWeatherMap API. The database is managed using Sequelize ORM, which handles table creation and migrations automatically. The main table, weather_data, stores city names, temperature, humidity, weather descriptions, and timestamps. To set up the database, create a MySQL instance and ensure the correct credentials are provided in the .env file. When the application starts, Sequelize will establish the connection and create the necessary tables if they do not already exist.
 
-To start, change the .ecv to the right database URL first. And enter: node dist/server.js
+To start, change the .ecv to the right database URL first. And enter: docker-compose up -d
