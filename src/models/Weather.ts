@@ -1,8 +1,8 @@
 import { DataTypes, Model } from 'sequelize';
 import { sequelize } from '../config/database';
 
-export class Weather extends Model {
-  // You can define types for attributes here if you want
+class Weather extends Model {
+  // define attribute here
   public id!: number;
   public city!: string;
   public temperature!: number;
@@ -27,3 +27,5 @@ Weather.init(
     timestamps: false
   }
 );
+
+export { Weather };

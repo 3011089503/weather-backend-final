@@ -1,8 +1,6 @@
-// This file provides a static WeatherService class.
-// Make sure the method is declared as "static" so that we can call it directly via "WeatherService.fetchWeather".
 
 import axios from 'axios';
-import { QueryTypes } from 'sequelize'; // ✅ 直接从 sequelize 导入 QueryTypes
+import { QueryTypes } from 'sequelize'; //  sequelize 
 import { Weather } from '../models/Weather';
 import { sequelize } from '../config/database';
 
@@ -15,10 +13,9 @@ interface WeeklyStats {
 }
 
 export class WeatherService {
-  /**
-   * Fetch weather data for a given city.
-   * This method is static, so we can call it using WeatherService.fetchWeather(city).
-   */
+  
+    //Fetch weather data for a given city.
+   
   static async fetchWeather(city: string) {
     try {
       const response = await axios.get(API_URL, {
@@ -68,7 +65,7 @@ export class WeatherService {
       const sevenDaysAgo = new Date();
       sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
 
-      // ✅ 使用 QueryTypes 进行原生 SQL 查询
+      
       const [results] = await sequelize.query<WeeklyStats>(
         `
         SELECT 
@@ -84,7 +81,7 @@ export class WeatherService {
         }
       );
 
-      // 如果数据库没有数据，确保返回默认值
+      // return default if database do not have data
       return results || { avgTemp: null, avgHumidity: null };
     } catch (error: any) {
       console.error(`Error retrieving weekly averages for ${city}:`, error.message);
