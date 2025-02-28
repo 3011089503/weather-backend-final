@@ -3,13 +3,13 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-// 创建 Sequelize 实例
+
 export const sequelize = new Sequelize(process.env.DATABASE_URL!, {
   dialect: 'mysql',
   logging: console.log,
 });
 
-// 这个函数会不断重试，直到 MySQL 启动完成
+
 async function connectWithRetry(retries = 5, delay = 5000) {
   for (let i = 0; i < retries; i++) {
     try {
@@ -29,10 +29,10 @@ async function connectWithRetry(retries = 5, delay = 5000) {
   }
 }
 
-// 在 MySQL 启动后，创建表
+
 async function initDatabase() {
   await connectWithRetry();
-  await sequelize.sync({ alter: true }); // 自动创建/更新表
+  await sequelize.sync({ alter: true }); 
   console.log('✅ Database & tables synced successfully!');
 }
 
